@@ -1,0 +1,19 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "forkify project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edwin-sam/forkify.git"
+  },
+  "author": "Edwin Sam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edwin-sam/forkify/issues"
+  },
+  "homepage": "https://github.com/edwin-sam/forkify#readme"
+}
