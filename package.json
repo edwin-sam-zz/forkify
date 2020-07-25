@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/edwin-sam/forkify/issues"
   },
-  "homepage": "https://github.com/edwin-sam/forkify#readme"
+  "homepage": "https://github.com/edwin-sam/forkify#readme",
+  "devDependencies": {
+    "webpack": "^4.44.0"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1"
+  }
 }
