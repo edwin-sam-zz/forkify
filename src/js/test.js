@@ -1,3 +1,3 @@
 console.log('Imported module');
-const newModule = "words";
+const newModule = "A COUPLE WORDS";
 export default newModule;
