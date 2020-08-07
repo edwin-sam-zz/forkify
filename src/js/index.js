@@ -1,4 +1,8 @@
-import sentence from "./models/model";
-import { add, mult, num } from "./views/searchView";
+import axios from 'axios';
+import 'babel-polyfill';
 
-console.log(`One time: ${sentence} and ${add(num, 3)}. Also, ${mult(1,2)}`);
+async function getResults(query) {
+    const result = await axios(`https://forkify-api.herokuapp.com/api/search?q=${query}`);
+    console.log(result);
+} 
+getResults('carrot');
