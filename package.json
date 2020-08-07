@@ -19,15 +19,21 @@
   },
   "homepage": "https://github.com/edwin-sam/forkify#readme",
   "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
-    "babel-loader": "^8.1.0",
+    "babel-env": "^2.4.1",
+    "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "html-webpack-plugin": "^4.3.0",
-    "webpack": "^4.44.0",
+    "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0"
+    "babel-polyfill": "^6.26.0",
+    "core-js": "^3.6.5"
   }
 }

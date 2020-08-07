@@ -86,6 +86,29 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/js/Models/model.js":
+/*!********************************!*\
+  !*** ./src/js/Models/model.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ('I am an imported string');\n\n//# sourceURL=webpack:///./src/js/Models/model.js?");
+
+/***/ }),
+
+/***/ "./src/js/Views/searchView.js":
+/*!************************************!*\
+  !*** ./src/js/Views/searchView.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("\n\n//# sourceURL=webpack:///./src/js/Views/searchView.js?");
+
+/***/ }),
+
 /***/ "./src/js/index.js":
 /*!*************************!*\
   !*** ./src/js/index.js ***!
@@ -94,19 +117,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _test__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./test */ \"./src/js/test.js\");\n// Global app controller\n\nconst x = 23;\nconsole.log(`I imported ${_test__WEBPACK_IMPORTED_MODULE_0__[\"default\"]} from another module called test.js!!! & ${x} is 23`);\n\n//# sourceURL=webpack:///./src/js/index.js?");
-
-/***/ }),
-
-/***/ "./src/js/test.js":
-/*!************************!*\
-  !*** ./src/js/test.js ***!
-  \************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nconsole.log('Imported module');\nconst newModule = \"A COUPLE WORDS\";\n/* harmony default export */ __webpack_exports__[\"default\"] = (newModule);\n\n//# sourceURL=webpack:///./src/js/test.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Models_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Models/model */ \"./src/js/Models/model.js\");\n/* harmony import */ var _Views_searchView__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Views/searchView */ \"./src/js/Views/searchView.js\");\n/* harmony import */ var _Views_searchView__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Views_searchView__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\nconsole.log(`One time: ${_Models_model__WEBPACK_IMPORTED_MODULE_0__[\"default\"]} amd ${Object(_Views_searchView__WEBPACK_IMPORTED_MODULE_1__[\"add\"])(_Views_searchView__WEBPACK_IMPORTED_MODULE_1__[\"num\"], 3)}. Also, ${Object(_Views_searchView__WEBPACK_IMPORTED_MODULE_1__[\"mult\"])(1,2)}`);\n\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ })
 
