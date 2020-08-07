@@ -1,8 +1,13 @@
 import axios from 'axios';
-import 'babel-polyfill';
 
 async function getResults(query) {
-    const result = await axios(`https://forkify-api.herokuapp.com/api/search?q=${query}`);
-    console.log(result);
-} 
-getResults('carrot');
+    try {
+        const result = await axios(`https://forkify-api.herokuapp.com/api/search?q=${query}`);
+    const recipes = result.data.recipes;
+    console.log(recipes);
+    }
+    catch (error) {
+        alert(error);
+    }
+}
+getResults('pasta');
