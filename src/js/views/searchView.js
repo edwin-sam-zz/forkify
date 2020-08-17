@@ -40,7 +40,7 @@ const renderRecipe = recipe => {
                 <img src="${recipe.image_url}" alt="${recipe.title}">
             </figure>
             <div class="results__data">
-                <h4 class="results__name">P${limitRecipeTitle(recipe.title)}</h4>
+                <h4 class="results__name">${limitRecipeTitle(recipe.title)}</h4>
                 <p class="results__author">${recipe.publisher}</p>
             </div>
         </a>

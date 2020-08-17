@@ -1,6 +1,7 @@
 import { elements, renderLoader, clearLoader } from './views/base';
 import Recipe from './models/recipe';
 import * as searchView from './views/searchView';
+import * as recipeView  from './views/recipeView';
 import Search from './models/Search';
 
 /** Global State of the app
@@ -18,7 +19,7 @@ const State = {};
 
 const controlSearch = async () => {
     // Get query from view
-    const query = 'pizza';
+    const query = searchView.getInput();
 
     if (query) {
         // 2) New search object and add to state
@@ -68,26 +69,30 @@ const controlRecipe = async() => {
 
     if (id) {
         // Prepare UI for changes
+        recipeView.clearRecipe();
+        renderLoader(elements.recipe); 
 
         // Create new recipe object
         State.recipe = new Recipe(id);
         try {
             // Get recipe data and parse ingredients 
-        await State.recipe.getRecipe();
-        State.recipe.parseIngredients();
+            await State.recipe.getRecipe();
+            State.recipe.parseIngredients();
 
-        // Calculate servings and time
-        State.recipe.calcTime();
-        State.recipe.calcServings();
+            // Calculate servings and time
+            State.recipe.calcTime();
+            State.recipe.calcServings();  
 
-        // Render recipe
-        console.log(State.recipe);
-        } catch (error) {
-            alert('Error processing recipe');
+            // Render recipe
+            clearLoader();
+            recipeView.renderRecipe(State.recipe);
         }
-        
+        catch (error) {
+            alert('Error processing recipe!');
+            clearLoader();
+        }
     }
-}
+};
 
 //If hash changes or page loads, fire event 
 ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlRecipe));
