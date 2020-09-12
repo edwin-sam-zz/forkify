@@ -13,6 +13,13 @@ const formatCount = count => {
 
         if (!dec) return count;
 
+        if (int === 0) {
+            const fr = new Fraction(count);
+            return `${fr.numerator}/${fr.denominator}`;
+        } else {
+            const fr = new Fraction(count - int);
+            return `${int} ${fr.numerator}/${fr.denominator}`;
+        }
     }
     return '?';
 }
@@ -116,4 +123,4 @@ export const updateServingsIngredients = recipe => {
     countElements.forEach((el, i) => {
         el.textContent = formatCount(recipe.ingredients[i].count);
     });
-}
+};
