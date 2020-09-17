@@ -1,5 +1,6 @@
 import { elements, renderLoader, clearLoader } from './views/base';
 import Recipe from './models/recipe';
+import List from './models/List';
 import * as searchView from './views/searchView';
 import * as recipeView  from './views/recipeView';
 import Search from './models/Search';
@@ -114,4 +115,8 @@ elements.recipe.addEventListener('click', e => {
         console.log(State.recipe);
         recipeView.updateServingsIngredients(State.recipe);
     }
-})
+});
+
+window.l = new List();
+
+
