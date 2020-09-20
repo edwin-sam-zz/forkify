@@ -14,6 +14,7 @@ import Search from './models/Search';
  */
 
 const State = {};
+window.state = State;
 
  /**
   * SEARCH CONROLLER
@@ -117,6 +118,24 @@ const controlList = () => {
     })
 };
 
+// Handle delete and update list events 
+elements.shopping.addEventListener('click', e => {
+    const id = e.target.closest('.shopping__item').dataset.itemid;
+    
+    //Handle the delete button
+    if (e.target.matches('.shopping__delete, .shopping__delete *')) {
+        // Delete from state
+        State.list.deleteItem(id);
+
+        // Delete from UI 
+        listView.deleteItem(id);
+    
+        //Handle count update
+    } else if (e.target.matches('.shopping__count-value')) {
+        const val = parseFloat(e.target.value, 10);
+        State.list.updateCount(id, val);
+    }
+})
 
 
 elements.recipe.addEventListener('click', e => {
