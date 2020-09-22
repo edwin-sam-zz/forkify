@@ -55,6 +55,7 @@ elements.searchForm.addEventListener('submit', e => {
    controlSearch();
 });
 
+// Clicking the "search button"
 elements.searchRecPages.addEventListener('click', e => {
     const btn = e.target.closest('.btn-inline');
     if (btn) {
@@ -148,6 +149,7 @@ elements.shopping.addEventListener('click', e => {
 
 // Just for testing
  State.likes = new Likes();
+ likesView.toggleLikeMenu(State.likes.getNumLikes());
 
 const controlLike = () => {
     if (!State.likes) State.likes = new Likes(); 
@@ -159,13 +161,14 @@ const controlLike = () => {
         const newLike = State.likes.addLike(
             currentID,
             state.recipe.title,
-            state.recipe.author,
+            state.recipe.publisher,
             state.recipe.img
         );
         // Toggle the like button
         likesView.toggleLikeBtn(true);
 
         // Add like to UI list 
+        likesView.renderLike(newLike);
         console.log(State.likes);
 
     // User HAS liked current recipe
@@ -177,7 +180,7 @@ const controlLike = () => {
         likesView.toggleLikeBtn(false);
 
         // Remove like from UI List 
-        console.log(State.likes);
+        likesView.deleteLike(currentID);
     }
     likesView.toggleLikeMenu(State.likes.getNumLikes());
 
