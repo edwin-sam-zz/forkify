@@ -8,12 +8,20 @@ export default class Likes {
     addLike(id, title, publisher, img) {
         const like = { id, title, publisher, img };
         this.likes.push(like);
+
+        // Save data in localStorage
+        this.persistData();
         return like;
+        
+        
     }
 
     deleteLike(id) {
         const index = this.likes.findIndex(el => el.id === id);
         this.likes.splice(index, 1);
+
+        // Save data in localStorage
+        this.persistData();
     }
 
     isLiked(id) {
@@ -22,5 +30,16 @@ export default class Likes {
 
     getNumLikes() {
         return this.likes.length;
+    }
+
+    persistData() {
+        localStorage.setItem('likes', JSON.stringify(this.likes));
+    }
+
+    readStorage() {
+        const storage = localStorage.getItem('likes');
+
+        // Restoring likes from the local Storage 
+        if (storage) this.likes = JSON.parse(storage);
     }
 }
